@@ -65,7 +65,6 @@
 			width: focusElem.width()
 		}
 		focusElem.addClass('focus');
-		console.log(focusElem.initialProperties);
 
 		focusElem.animate({
 			height: 300, 
@@ -81,6 +80,8 @@
 			.height($(document).height())
 			.fadeIn('fast')
 			.bind('click', postBlur);
+
+		createCloseButton(focusElem);
 		
 		event.preventDefault();
 	}
@@ -89,13 +90,31 @@
 		if(focusElem) {
 			focusElem.animate(focusElem.initialProperties, 
 				500, 'easeOutQuad', function() {
+				$('#post_close_button').remove();
 				focusElem.removeClass('focus');
 				container.masonry('layout');
 			})
 				.bind('click', postFocus);
 			}
-		$('#site_modal').fadeOut('slow').unbind('click', postBlur);
-		event.preventDefault();
+		$('#site_modal').fadeOut('slow').unbind('click');
+		
+		if (event) {
+			event.preventDefault();
+		}
+	}
+
+	var createCloseButton = function(wrapperElement) {
+		var closeElement = $('<div id="post_close_button">x</div>');
+		closeElement.css({
+			'cursor': 		'pointer',
+			'position': 	'absolute',
+			'width': 			'10px',
+			'height': 		'10px',
+			'top': 				'-5px',
+			'right':			'-5px'
+		}).bind('click', postBlur);
+		
+		$(wrapperElement).prepend(closeElement);
 	}
 
 </script>
