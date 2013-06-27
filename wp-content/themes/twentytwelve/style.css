@@ -537,7 +537,7 @@ a:hover {
 	margin: 1.714285714rem 0 0;
 }
 
-#site_modal {
+.home #site_modal {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
 	display: none;
   height: 100%;
@@ -547,6 +547,20 @@ a:hover {
   top: 0;
   width: 100%;
   z-index: 999;
+}
+
+.home #post_close_button {
+	background: url("/portfolio/wp-includes/images/uploader-icons.png") no-repeat -80px 0 transparent;
+  cursor: pointer;
+  height: 15px;
+  position: absolute;
+  right: -5px;
+  text-indent: -999em;
+  top: 1px;
+  width: 20px;
+}
+.home #post_close_button:hover {
+	background-position: -100px 0;
 }
 
 /* Header */
@@ -956,7 +970,20 @@ img.aligncenter {
 	border-top: 1px solid #ededed;
 	padding: 6px 10px 6px 0;
 }
+
 .site-content article {
+	border-bottom: 4px double #ededed;
+	margin-bottom: 72px;
+	margin-bottom: 5.142857143rem;
+	padding-bottom: 24px;
+	padding-bottom: 1.714285714rem;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+.home .site-content article {
 	-moz-hyphens: auto;
 	background: #FFF;
   border: 1px solid #EEEEEE;
@@ -969,7 +996,7 @@ img.aligncenter {
   width: 100%;
 }
 
-.site-content #content article.focus {
+.home .site-content #content article.focus {
   max-width: none;
   z-index: 999;
 }

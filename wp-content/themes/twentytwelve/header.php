@@ -42,13 +42,13 @@
 			focusElem;
 	
 	$(function() {
-		container = $('#content');
+		container = $('.home #content');
 		container.masonry({
 			itemSelector: '.post',
 			transitionDuration: 500
 		});
 		
-		$('#content article.post').bind('click', postFocus);
+		container.find('article.post').bind('click', postFocus);
 	});
 
 	var postFocus = function(event) {
@@ -93,9 +93,9 @@
 				$('#post_close_button').remove();
 				focusElem.removeClass('focus');
 				container.masonry('layout');
-			})
-				.bind('click', postFocus);
-			}
+				$(this).bind('click', postFocus);
+			});
+		}
 		$('#site_modal').fadeOut('slow').unbind('click');
 		
 		if (event) {
@@ -105,14 +105,10 @@
 
 	var createCloseButton = function(wrapperElement) {
 		var closeElement = $('<div id="post_close_button">x</div>');
-		closeElement.css({
-			'cursor': 		'pointer',
-			'position': 	'absolute',
-			'width': 			'10px',
-			'height': 		'10px',
-			'top': 				'-5px',
-			'right':			'-5px'
-		}).bind('click', postBlur);
+		closeElement.bind('click', function(event) {
+			$(this).fadeOut('fast');			
+			postBlur(event);
+		});
 		
 		$(wrapperElement).prepend(closeElement);
 	}
