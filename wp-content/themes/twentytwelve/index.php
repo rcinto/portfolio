@@ -18,6 +18,17 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
+		<?php if ( is_front_page() ) : ?>	
+			<article id="about-me">
+				<?php $page = get_page_by_path('/about-me'); ?>
+				<header>
+					<h1><?php echo $page->post_title; ?></h1>
+				</header>
+				<div class="about-me-content">
+					<?php echo $page->post_content; ?>
+				</div>
+			</article>
+		<?php endif; ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

@@ -527,6 +527,7 @@ a:hover {
 	padding: 0 24px;
 	padding: 0 1.714285714rem;
 	background-color: #fff;
+	position: relative;
 }
 .site-content {
 	margin: 24px 0 0;
@@ -537,8 +538,10 @@ a:hover {
 	margin: 1.714285714rem 0 0;
 }
 
+
 .home #site_modal {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+	cursor: alias;
 	display: none;
   height: 100%;
   left: 0;
@@ -559,11 +562,43 @@ a:hover {
   top: 1px;
   width: 20px;
 }
+
 .home #post_close_button:hover {
 	background-position: -100px 0;
 }
 
+
 /* Header */
+
+#fb-recommend {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#fb-recommend .fb-icon {
+	background: url("/portfolio/wp-includes/images/facebook-like-xxl.png") no-repeat 0 0 transparent;
+	cursor: pointer;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  z-index: 999;
+}
+
+#fb-recommend .fb-icon:hover, 
+	#fb-recommend .fb-icon:active {
+	background-position: 0 -50px;
+}
+
+
+#fb-recommend .fb-like {
+  margin: 20px 0 0;
+  position: absolute;
+  right: -290px;
+}
+
 .site-header {
 	padding: 24px 0;
 	padding: 1.714285714rem 0;
@@ -983,6 +1018,19 @@ img.aligncenter {
 	hyphens: auto;
 }
 
+
+/* CUSTOM HOME STYLES */
+article#about-me {
+	cursor: auto;
+  height: auto;
+  margin: 0 10px 20px 0;
+  max-width: none;
+  min-height: 350px;
+  padding: 10px;
+  position: static;
+  width: 40%;
+}
+
 .home .site-content article {
 	-moz-hyphens: auto;
 	background: #FFF;
@@ -997,9 +1045,65 @@ img.aligncenter {
 }
 
 .home .site-content #content article.focus {
+	cursor: auto;
   max-width: none;
   z-index: 999;
 }
+
+.home article .entry-content {
+	max-height: 100px;
+	overflow: hidden;
+}
+.home article.focus .entry-content {
+	max-height: none;
+	overflow: auto;	
+}
+
+.home .dynamic-post {
+	/*left: -230px;*/
+	position: relative;
+  width: 460px;
+}
+
+.home .dynamic-post .image_preview {
+	float: left;
+  margin: 0 5px 0 0;
+  max-width: 220px;
+  min-width: 150px;
+  position: relative;
+  width: 100%;
+}
+
+.home .dynamic-post .image_preview h1 {
+	font-size: 1.57143rem;
+  font-weight: normal;
+  margin: 10px;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.home .dynamic-post .image_preview h1 a {
+	text-decoration: none;
+}
+
+.home .dynamic-post .post-entry {
+	float: left;
+  margin: 0 0 0 10px;
+  max-width: 220px;
+  min-width: 150px;
+  width: 100%;
+}
+
+#about-me {
+	line-height: 25px;
+}
+
+#about-me h1 {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+/* END OF CUSTOM HOME STYLES */
 
 .page-links {
 	clear: both;

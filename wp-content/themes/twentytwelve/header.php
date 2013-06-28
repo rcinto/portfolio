@@ -39,26 +39,36 @@
 
 <script type="text/javascript">
 	var container,
-			focusElem;
+			focusElem,
+			coolEasings = Array('easeOutElastic', 'easeOutBack', 'easeOutQuart', 'easeOutCirc');
 	
 	$(function() {
 		container = $('.home #content');
 		container.masonry({
 			itemSelector: '.post',
-			transitionDuration: 500
+			transitionDuration: 300,
+			stamp: '#about-me'
 		});
 		
 		container.find('article.post').bind('click', postFocus);
+		container.find('.dynamic-post').parent().bind('mouseenter', postMouseOver).bind('mouseleave', postMouseOut);
+
+		$('#fb-recommend .fb-icon').bind('click', function(event) {
+			$(this).hide();
+			$('#fb-recommend .fb-like').animate({
+				right: 0
+			}, 'fast');
+			event.preventDefault();
+		});
 	});
 
 	var postFocus = function(event) {
-		$(this).css({
-			'width': $(this).width()
-		});
+		var sortedPosition = Math.floor(Math.random() * coolEasings.length);
 		
 		focusElem = $(this);
-
-		focusElem.initialProperties = {
+		focusElem.css({
+			'width': $(this).width()
+		}).initialProperties = {
 			height: focusElem.height(), 
 			left: focusElem.position().left, 
 			top: focusElem.position().top, 
@@ -66,13 +76,17 @@
 		}
 		focusElem.addClass('focus');
 
+		if($(this).data('dynamic')) {
+			$(this).children().removeClass('dynamic-post').find('.image_preview').hide();
+		}
+
 		focusElem.animate({
 			height: 300, 
-			left: '23%', 
+			left: '10%', 
 			top: '0', 
-			width: '50%',
+			width: '80%',
 			position: 'fixed'
-		}, 500, 'easeOutQuad');
+		}, 1000, coolEasings[sortedPosition]);
 
 		focusElem.unbind('click', postFocus);
 
@@ -88,12 +102,16 @@
 
 	var postBlur = function(event) {
 		if(focusElem) {
+			if(focusElem.data('dynamic')) {
+				focusElem.children().addClass('dynamic-post').find('.image_preview').show();
+			}
+			
 			focusElem.animate(focusElem.initialProperties, 
 				500, 'easeOutQuad', function() {
 				$('#post_close_button').remove();
 				focusElem.removeClass('focus');
 				container.masonry('layout');
-				$(this).bind('click', postFocus);
+				$(this).bind('click', postFocus).trigger('mouseleave');
 			});
 		}
 		$('#site_modal').fadeOut('slow').unbind('click');
@@ -104,7 +122,7 @@
 	}
 
 	var createCloseButton = function(wrapperElement) {
-		var closeElement = $('<div id="post_close_button">x</div>');
+		var closeElement = $('<div id="post_close_button" title="Close">x</div>');
 		closeElement.bind('click', function(event) {
 			$(this).fadeOut('fast');			
 			postBlur(event);
@@ -113,19 +131,46 @@
 		$(wrapperElement).prepend(closeElement);
 	}
 
+	var postMouseOver = function() {
+		$(this).css('overflow', 'hidden').data('dynamic', 'true');
+		
+		$(this).find('.dynamic-post').animate({
+			left: '-230px'
+		}, 200, 'easeOutCubic');
+	}
+
+	var postMouseOut = function() {
+		$(this).find('.dynamic-post').animate({
+			left: '0'
+		}, 200, 'easeOutCubic');
+	}
+
 </script>
 
 </head>
 
 <body <?php body_class(); ?>>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="site_modal"></div>
 <div id="page" class="hfeed site">
+	<div id="fb-recommend">
+		<div class="fb-icon" title="Do you like it?"></div>
+		<div class="fb-like" data-href="<?php echo site_url(); ?>" data-send="true" data-width="200" data-show-faces="true" data-font="lucida grande"></div>
+	</div>
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
-
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
