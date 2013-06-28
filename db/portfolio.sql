@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: Jun 28, 2013 as 05:49 PM
+-- Tempo de Geração: Jun 28, 2013 as 06:14 PM
 -- Versão do Servidor: 5.1.54
 -- Versão do PHP: 5.3.5
 
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
   `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=259 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=261 ;
 
 --
 -- Extraindo dados da tabela `wp_options`
@@ -159,7 +159,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (32, 'hack_file', '0', 'yes'),
 (33, 'blog_charset', 'UTF-8', 'yes'),
 (34, 'moderation_keys', '', 'no'),
-(35, 'active_plugins', 'a:0:{}', 'yes'),
+(35, 'active_plugins', 'a:1:{i:0;s:36:"contact-form-7/wp-contact-form-7.php";}', 'yes'),
 (36, 'home', 'http://localhost/portfolio', 'yes'),
 (37, 'category_base', '', 'yes'),
 (38, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
@@ -225,7 +225,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (98, 'sidebars_widgets', 'a:5:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:0:{}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}s:13:"array_version";i:3;}', 'yes'),
 (99, 'cron', 'a:4:{i:1372467537;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1372510743;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1372511624;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (101, '_site_transient_update_core', 'O:8:"stdClass":3:{s:7:"updates";a:1:{i:0;O:8:"stdClass":9:{s:8:"response";s:6:"latest";s:8:"download";s:40:"http://wordpress.org/wordpress-3.5.2.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":4:{s:4:"full";s:40:"http://wordpress.org/wordpress-3.5.2.zip";s:10:"no_content";s:51:"http://wordpress.org/wordpress-3.5.2-no-content.zip";s:11:"new_bundled";s:52:"http://wordpress.org/wordpress-3.5.2-new-bundled.zip";s:7:"partial";b:0;}s:7:"current";s:5:"3.5.2";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"3.5";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1372424338;s:15:"version_checked";s:5:"3.5.2";}', 'yes'),
-(102, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1372428771;s:7:"checked";a:3:{s:19:"akismet/akismet.php";s:5:"2.5.8";s:9:"hello.php";s:3:"1.6";s:21:"sharebar/sharebar.php";s:5:"1.2.5";}s:8:"response";a:0:{}}', 'yes'),
+(102, '_site_transient_update_plugins', 'O:8:"stdClass":3:{s:12:"last_checked";i:1372442688;s:7:"checked";a:3:{s:19:"akismet/akismet.php";s:5:"2.5.8";s:36:"contact-form-7/wp-contact-form-7.php";s:5:"3.4.2";s:9:"hello.php";s:3:"1.6";}s:8:"response";a:0:{}}', 'yes'),
 (229, '_site_transient_timeout_theme_roots', '1372426109', 'yes'),
 (230, '_site_transient_theme_roots', 'a:2:{s:12:"twentyeleven";s:7:"/themes";s:12:"twentytwelve";s:7:"/themes";}', 'yes'),
 (105, '_site_transient_update_themes', 'O:8:"stdClass":3:{s:12:"last_checked";i:1372421463;s:7:"checked";a:2:{s:12:"twentyeleven";s:3:"1.5";s:12:"twentytwelve";s:3:"1.1";}s:8:"response";a:0:{}}', 'yes'),
@@ -249,7 +249,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (256, 'sharebar_sbg', '', 'yes'),
 (257, 'sharebar_sborder', 'e8e8e8', 'yes'),
 (258, '_transient_plugins_delete_result_1', '1', 'yes'),
-(191, '_transient_random_seed', '96e7a04762a285d89ce0e3d23493369c', 'yes'),
+(259, 'wpcf7', 'a:1:{s:7:"version";s:5:"3.4.2";}', 'yes'),
+(260, 'category_children', 'a:0:{}', 'yes'),
+(191, '_transient_random_seed', 'b73b3f3acbb8e7bafc415dac2fe2ea08', 'yes'),
 (235, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:"auto_add";a:0:{}}', 'yes'),
 (234, 'theme_mods_twentytwelve', 'a:1:{s:18:"nav_menu_locations";a:1:{s:7:"primary";i:2;}}', 'yes'),
 (242, 'recently_activated', 'a:1:{s:21:"sharebar/sharebar.php";i:1372429309;}', 'yes'),
@@ -284,8 +286,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (208, '_transient_timeout_dash_4077549d03da2e451c8b5f002294ff51', '1372464992', 'no');
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 (209, '_transient_dash_4077549d03da2e451c8b5f002294ff51', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''http://wordpress.org/news/2013/06/wordpress-3-5-2/'' title=''WordPress 3.5.2 is now available. This is the second maintenance release of 3.5, fixing 12 bugs. This is a security release for all previous versions and we strongly encourage you to update your sites immediately. The WordPress security team resolved seven security issues, and this release also contains some additional security hardening. The security fixes  [&hellip;]''>WordPress 3.5.2 Maintenance and Security Release</a> <span class="rss-date">June 21, 2013</span><div class=''rssSummary''>WordPress 3.5.2 is now available. This is the second maintenance release of 3.5, fixing 12 bugs. This is a security release for all previous versions and we strongly encourage you to update your sites immediately. The WordPress security team resolved seven security issues, and this release also contains some additional security hardening. The security fixes  [&hellip;]</div></li><li><a class=''rsswidget'' href=''http://wordpress.org/news/2013/05/ten-good-years/'' title=''It’s been ten years since we started this thing, and what a long way we’ve come. From a discussion between myself and Mike Little about forking our favorite blogging software, to powering 18% of the web. It’s been a crazy, exciting, journey, and one that won’t stop any time soon. At ten years, it’s fun […] [&hellip;]''>Ten Good Years</a> <span class="rss-date">May 31, 2013</span><div class=''rssSummary''>It’s been ten years since we started this thing, and what a long way we’ve come. From a discussion between myself and Mike Little about forking our favorite blogging software, to powering 18% of the web. It’s been a crazy, exciting, journey, and one that won’t stop any time soon. At ten years, it’s fun […] [&hellip;]</div></li></ul></div>', 'no'),
-(186, '_transient_timeout_plugin_slugs', '1372515714', 'no'),
-(187, '_transient_plugin_slugs', 'a:2:{i:0;s:19:"akismet/akismet.php";i:1;s:9:"hello.php";}', 'no'),
+(186, '_transient_timeout_plugin_slugs', '1372529112', 'no'),
+(187, '_transient_plugin_slugs', 'a:3:{i:0;s:19:"akismet/akismet.php";i:1;s:36:"contact-form-7/wp-contact-form-7.php";i:2;s:9:"hello.php";}', 'no'),
 (218, '_transient_timeout_feed_mod_a5420c83891a9c88ad2a4f04584a5efc', '1372464993', 'no'),
 (219, '_transient_feed_mod_a5420c83891a9c88ad2a4f04584a5efc', '1372421793', 'no'),
 (231, '_site_transient_timeout_wporg_theme_feature_list', '1372435109', 'yes'),
@@ -306,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `wp_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=85 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=90 ;
 
 --
 -- Extraindo dados da tabela `wp_postmeta`
@@ -347,8 +349,8 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (58, 15, '_wp_old_slug', 'curabitur-sed-elementum-lectus'),
 (61, 34, '_wp_page_template', 'default'),
 (62, 36, '_edit_last', '1'),
-(63, 36, '_edit_lock', '1372424165:1'),
-(64, 36, '_wp_page_template', 'default'),
+(63, 36, '_edit_lock', '1372443023:1'),
+(64, 36, '_wp_page_template', 'page-templates/full-width.php'),
 (65, 38, '_menu_item_type', 'post_type'),
 (66, 38, '_menu_item_menu_item_parent', '0'),
 (67, 38, '_menu_item_object_id', '36'),
@@ -366,7 +368,12 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (80, 39, '_menu_item_xfn', ''),
 (81, 39, '_menu_item_url', 'http://localhost/portfolio/'),
 (83, 2, '_edit_lock', '1372424570:1'),
-(84, 2, '_edit_last', '1');
+(84, 2, '_edit_last', '1'),
+(85, 42, '_form', '<p>Your Name (required)<br />\n    [text* your-name] </p>\n\n<p>Your Email (required)<br />\n    [email* your-email] </p>\n\n<p>Subject<br />\n    [text your-subject] </p>\n\n<p>Your Message<br />\n    [textarea your-message] </p>\n\n<p>[submit "Send"]</p>'),
+(86, 42, '_mail', 'a:7:{s:7:"subject";s:14:"[your-subject]";s:6:"sender";s:26:"[your-name] <[your-email]>";s:4:"body";s:169:"From: [your-name] <[your-email]>\nSubject: [your-subject]\n\nMessage Body:\n[your-message]\n\n--\nThis e-mail was sent from a contact form on RC;WD (http://localhost/portfolio)";s:9:"recipient";s:24:"en.rodrigo.gen@gmail.com";s:18:"additional_headers";s:0:"";s:11:"attachments";s:0:"";s:8:"use_html";b:0;}'),
+(87, 42, '_mail_2', 'a:8:{s:6:"active";b:0;s:7:"subject";s:14:"[your-subject]";s:6:"sender";s:26:"[your-name] <[your-email]>";s:4:"body";s:111:"Message Body:\n[your-message]\n\n--\nThis e-mail was sent from a contact form on RC;WD (http://localhost/portfolio)";s:9:"recipient";s:12:"[your-email]";s:18:"additional_headers";s:0:"";s:11:"attachments";s:0:"";s:8:"use_html";b:0;}'),
+(88, 42, '_messages', 'a:21:{s:12:"mail_sent_ok";s:43:"Your message was sent successfully. Thanks.";s:12:"mail_sent_ng";s:93:"Failed to send your message. Please try later or contact the administrator by another method.";s:16:"validation_error";s:74:"Validation errors occurred. Please confirm the fields and submit it again.";s:4:"spam";s:93:"Failed to send your message. Please try later or contact the administrator by another method.";s:12:"accept_terms";s:35:"Please accept the terms to proceed.";s:16:"invalid_required";s:31:"Please fill the required field.";s:17:"captcha_not_match";s:31:"Your entered code is incorrect.";s:12:"invalid_date";s:26:"Date format seems invalid.";s:14:"date_too_early";s:23:"This date is too early.";s:13:"date_too_late";s:22:"This date is too late.";s:13:"upload_failed";s:22:"Failed to upload file.";s:24:"upload_file_type_invalid";s:30:"This file type is not allowed.";s:21:"upload_file_too_large";s:23:"This file is too large.";s:23:"upload_failed_php_error";s:38:"Failed to upload file. Error occurred.";s:14:"invalid_number";s:28:"Number format seems invalid.";s:16:"number_too_small";s:25:"This number is too small.";s:16:"number_too_large";s:25:"This number is too large.";s:23:"quiz_answer_not_correct";s:27:"Your answer is not correct.";s:13:"invalid_email";s:28:"Email address seems invalid.";s:11:"invalid_url";s:18:"URL seems invalid.";s:11:"invalid_tel";s:31:"Telephone number seems invalid.";}'),
+(89, 42, '_additional_settings', '');
 
 -- --------------------------------------------------------
 
@@ -403,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 --
 -- Extraindo dados da tabela `wp_posts`
@@ -445,12 +452,16 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (33, 1, '2013-06-28 12:29:35', '2013-06-28 12:29:35', 'Curabitur sed elementum lectus, volutpat placerat augue. Nulla porta odio ac sapien dictum ultrices. Curabitur magna urna, dictum sit amet lacinia eu', 'Webkit knowledge', '', 'inherit', 'open', 'open', '', '15-autosave', '', '', '2013-06-28 12:29:35', '2013-06-28 12:29:35', '', 15, 'http://localhost/portfolio/15-autosave/', 0, 'revision', '', 0),
 (34, 1, '2013-06-28 12:57:11', '2013-06-28 12:57:11', 'Quisque vel orci elementum, dapibus felis ac, ultricies sem. Nam elementum nisi quis nisi faucibus tempor. Donec nec placerat urna, vel pharetra lacus. Suspendisse dignissim leo non commodo semper. Vivamus semper ipsum elit, nec sodales mi accumsan eget. Donec sodales, nulla vitae convallis auctor, lorem orci congue orci, nec bibendum massa urna non tellus. Mauris nec lorem dignissim, scelerisque dui nec, tempor orci. Nulla sed orci diam. Donec neque ante, rutrum pretium tempor sed, ultricies at sem. Maecenas vehicula urna pharetra dolor facilisis, in vestibulum purus tincidunt. Suspendisse malesuada mollis ipsum at bibendum. Nulla a venenatis libero. In sodales ac turpis ac sagittis. Integer quis sapien sed purus porta vehicula quis et magna.', 'About Me', '', 'publish', 'open', 'open', '', 'about-me', '', '', '2013-06-28 12:57:11', '2013-06-28 12:57:11', '', 0, 'http://localhost/portfolio/?page_id=34', 0, 'page', '', 0),
 (35, 1, '2013-06-28 12:57:10', '2013-06-28 12:57:10', 'Quisque vel orci elementum, dapibus felis ac, ultricies sem. Nam elementum nisi quis nisi faucibus tempor. Donec nec placerat urna, vel pharetra lacus. Suspendisse dignissim leo non commodo semper. Vivamus semper ipsum elit, nec sodales mi accumsan eget. Donec sodales, nulla vitae convallis auctor, lorem orci congue orci, nec bibendum massa urna non tellus. Mauris nec lorem dignissim, scelerisque dui nec, tempor orci. Nulla sed orci diam. Donec neque ante, rutrum pretium tempor sed, ultricies at sem. Maecenas vehicula urna pharetra dolor facilisis, in vestibulum purus tincidunt. Suspendisse malesuada mollis ipsum at bibendum. Nulla a venenatis libero. In sodales ac turpis ac sagittis. Integer quis sapien sed purus porta vehicula quis et magna.', 'About Me', '', 'inherit', 'open', 'open', '', '34-revision', '', '', '2013-06-28 12:57:10', '2013-06-28 12:57:10', '', 34, 'http://localhost/portfolio/34-revision/', 0, 'revision', '', 0),
-(36, 1, '2013-06-28 12:57:55', '2013-06-28 12:57:55', 'CONTACT PAGE', 'Contact', '', 'publish', 'open', 'open', '', 'contact', '', '', '2013-06-28 12:57:55', '2013-06-28 12:57:55', '', 0, 'http://localhost/portfolio/?page_id=36', 0, 'page', '', 0),
+(36, 1, '2013-06-28 12:57:55', '2013-06-28 12:57:55', '[contact-form-7 id="42" title="Contact"]', 'Contact', '', 'publish', 'closed', 'closed', '', 'contact', '', '', '2013-06-28 18:10:23', '2013-06-28 18:10:23', '', 0, 'http://localhost/portfolio/?page_id=36', 0, 'page', '', 0),
 (37, 1, '2013-06-28 12:57:49', '2013-06-28 12:57:49', '', 'Contact', '', 'inherit', 'open', 'open', '', '36-revision', '', '', '2013-06-28 12:57:49', '2013-06-28 12:57:49', '', 36, 'http://localhost/portfolio/36-revision/', 0, 'revision', '', 0),
 (38, 1, '2013-06-28 12:58:59', '2013-06-28 12:58:59', ' ', '', '', 'publish', 'open', 'open', '', '38', '', '', '2013-06-28 12:59:37', '2013-06-28 12:59:37', '', 0, 'http://localhost/portfolio/?p=38', 2, 'nav_menu_item', '', 0),
 (39, 1, '2013-06-28 12:59:37', '2013-06-28 12:59:37', '', 'Home', '', 'publish', 'open', 'open', '', 'home', '', '', '2013-06-28 12:59:37', '2013-06-28 12:59:37', '', 0, 'http://localhost/portfolio/?p=39', 1, 'nav_menu_item', '', 0),
 (40, 1, '2013-06-25 12:58:54', '2013-06-25 12:58:54', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin'' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href="http://localhost/portfolio/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Sample Page', '', 'inherit', 'open', 'open', '', '2-revision', '', '', '2013-06-25 12:58:54', '2013-06-25 12:58:54', '', 2, 'http://localhost/portfolio/2-revision/', 0, 'revision', '', 0),
-(41, 1, '2013-06-28 13:05:54', '2013-06-28 13:05:54', 'Quisque vel orci elementum, dapibus felis ac, ultricies sem. Nam elementum nisi quis nisi faucibus tempor. Donec nec placerat urna, vel pharetra lacus. Suspendisse dignissim leo non commodo semper. Vivamus semper ipsum elit, nec sodales mi accumsan eget. Donec sodales, nulla vitae convallis auctor, lorem orci congue orci, nec bibendum massa urna non tellus. Mauris nec lorem dignissim, scelerisque dui nec, tempor orci. Nulla sed orci diam. Donec neque ante, rutrum pretium tempor sed, ultricies at sem. Maecenas vehicula urna pharetra dolor facilisis, in vestibulum purus tincidunt. Suspendisse malesuada mollis ipsum at bibendum. Nulla a venenatis libero. In sodales ac turpis ac sagittis. Integer quis sapien sed purus porta vehicula quis et magna.', 'About Me', '', 'inherit', 'open', 'open', '', '34-autosave', '', '', '2013-06-28 13:05:54', '2013-06-28 13:05:54', '', 34, 'http://localhost/portfolio/34-autosave/', 0, 'revision', '', 0);
+(41, 1, '2013-06-28 13:05:54', '2013-06-28 13:05:54', 'Quisque vel orci elementum, dapibus felis ac, ultricies sem. Nam elementum nisi quis nisi faucibus tempor. Donec nec placerat urna, vel pharetra lacus. Suspendisse dignissim leo non commodo semper. Vivamus semper ipsum elit, nec sodales mi accumsan eget. Donec sodales, nulla vitae convallis auctor, lorem orci congue orci, nec bibendum massa urna non tellus. Mauris nec lorem dignissim, scelerisque dui nec, tempor orci. Nulla sed orci diam. Donec neque ante, rutrum pretium tempor sed, ultricies at sem. Maecenas vehicula urna pharetra dolor facilisis, in vestibulum purus tincidunt. Suspendisse malesuada mollis ipsum at bibendum. Nulla a venenatis libero. In sodales ac turpis ac sagittis. Integer quis sapien sed purus porta vehicula quis et magna.', 'About Me', '', 'inherit', 'open', 'open', '', '34-autosave', '', '', '2013-06-28 13:05:54', '2013-06-28 13:05:54', '', 34, 'http://localhost/portfolio/34-autosave/', 0, 'revision', '', 0),
+(42, 1, '2013-06-28 18:05:11', '2013-06-28 18:05:11', '<p>Your Name (required)<br />\r\n    [text* your-name] </p>\r\n\r\n<p>Your Email (required)<br />\r\n    [email* your-email] </p>\r\n\r\n<p>Subject<br />\r\n    [text your-subject] </p>\r\n\r\n<p>Your Message<br />\r\n    [textarea your-message] </p>\r\n\r\n<p>[submit "Send"]</p>\n[your-subject]\n[your-name] <[your-email]>\nFrom: [your-name] <[your-email]>\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n--\r\nThis e-mail was sent from a contact form on RC;WD (http://localhost/portfolio)\nen.rodrigo.gen@gmail.com\n\n\n\n\n[your-subject]\n[your-name] <[your-email]>\nMessage Body:\r\n[your-message]\r\n\r\n--\r\nThis e-mail was sent from a contact form on RC;WD (http://localhost/portfolio)\n[your-email]\n\n\n\nYour message was sent successfully. Thanks.\nFailed to send your message. Please try later or contact the administrator by another method.\nValidation errors occurred. Please confirm the fields and submit it again.\nFailed to send your message. Please try later or contact the administrator by another method.\nPlease accept the terms to proceed.\nPlease fill the required field.\nYour entered code is incorrect.\nDate format seems invalid.\nThis date is too early.\nThis date is too late.\nFailed to upload file.\nThis file type is not allowed.\nThis file is too large.\nFailed to upload file. Error occurred.\nNumber format seems invalid.\nThis number is too small.\nThis number is too large.\nYour answer is not correct.\nEmail address seems invalid.\nURL seems invalid.\nTelephone number seems invalid.', 'Contact', '', 'publish', 'open', 'open', '', 'contact-form-1', '', '', '2013-06-28 18:06:06', '2013-06-28 18:06:06', '', 0, 'http://localhost/portfolio/?post_type=wpcf7_contact_form&#038;p=42', 0, 'wpcf7_contact_form', '', 0),
+(43, 1, '2013-06-28 12:57:55', '2013-06-28 12:57:55', 'CONTACT PAGE', 'Contact', '', 'inherit', 'open', 'open', '', '36-revision-2', '', '', '2013-06-28 12:57:55', '2013-06-28 12:57:55', '', 36, 'http://localhost/portfolio/36-revision-2/', 0, 'revision', '', 0),
+(44, 1, '2013-06-28 18:06:45', '2013-06-28 18:06:45', '[contact-form-7 id="42" title="Contact"]', 'Contact', '', 'inherit', 'open', 'open', '', '36-revision-3', '', '', '2013-06-28 18:06:45', '2013-06-28 18:06:45', '', 36, 'http://localhost/portfolio/36-revision-3/', 0, 'revision', '', 0),
+(45, 1, '2013-06-28 18:07:33', '2013-06-28 18:07:33', '[contact-form-7 id="42" title="Contact"]', 'Contact', '', 'inherit', 'open', 'open', '', '36-revision-4', '', '', '2013-06-28 18:07:33', '2013-06-28 18:07:33', '', 36, 'http://localhost/portfolio/36-revision-4/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
